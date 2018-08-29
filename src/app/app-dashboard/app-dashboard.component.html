@@ -1,0 +1,67 @@
+<div class="container mainContainer">
+  <div class="row mb20">
+    <div class="col-md-4 col-sm-4 col-xs-4 text-muted">Available Players:{{availablePlayers.length}} </div>
+    <div class="col-md-4 col-sm-4 col-xs-4 text-muted">Selected Players: {{selectedPlayers.length}}</div>
+    <div class="col-md-4 col-sm-4 col-xs-4 text-muted">Total Budget: </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-sm-4 col-xs-4">
+      <ul class="list-item availablePlayersList">
+        <li class="list-group-item playerList mb5" *ngFor="let player of availablePlayers;let i = index;" (click)="selectPlayer(i)">
+          <div class="wrapperDiv row">
+            <div class="userAvtar col-md-2" style="padding-top:3%">
+              <i class="fa fa-user playerAvtarIcon"></i>
+            </div>
+            <div class="col-md-4 playerBasicInfo vAglignMiddle">
+              <div class="playerName">{{player.playerName}}</div>
+              <div class="playerName">Rs {{player.playerValue | number}}</div>
+            </div>
+            <div class="col-md-5 playerRankInfo vAglignMiddle">
+              <div class="playerBowlingrank"><span>Bowling Rank</span> <span class="pull-right text-right">: {{player.battingRank}}</span></div>
+              <div class="playerBattingRank"><span>Batting Rank </span> <span class="pull-right text-right"> : {{player.bowlingRank}}</span></div>
+              <div class="playerOverallRank"><span> Round Rank </span> <span class="pull-right text-right">: {{player.overAllRank}}</span></div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-4">
+      <ul class="list-item selectedPlayersList">
+        <li class="list-group-item playerList mb5" *ngFor="let player of selectedPlayers;let i = index;" (click)="removeSelectedPlayer(i)">
+          <div class="wrapperDiv row">
+            <div class="userAvtar col-md-2" style="padding-top:3%">
+              <i class="fa fa-user playerAvtarIcon"></i>
+            </div>
+            <div class="col-md-4 playerBasicInfo vAglignMiddle">
+              <div class="playerName">{{player.playerName}}</div>
+              <div class="playerName">Rs {{player.playerValue | number}}</div>
+            </div>
+            <div class="col-md-5 playerRankInfo vAglignMiddle">
+              <div class="playerBowlingrank"><span>Bowling Rank</span> <span class="pull-right text-right">: {{player.battingRank}}</span></div>
+              <div class="playerBattingRank"><span>Batting Rank </span> <span class="pull-right text-right"> : {{player.bowlingRank}}</span></div>
+              <div class="playerOverallRank"><span> Round Rank </span> <span class="pull-right text-right">: {{player.overAllRank}}</span></div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-4">
+      <div class="totalBudgetWrapper">
+        <label class="control-label">Total Budget: </label>
+        <span>Rs {{totalAmount | number}}</span>
+      </div>
+      <div class="usedBudgetWrapper" *ngIf="usedAmount">
+        <label class="control-label">Used: </label>
+        <span>Rs {{usedAmount | number}}</span>
+      </div>
+      <div class="remainingBudgetWrapper" *ngIf="remainingAmount">
+        <label class="control-label">Available: </label>
+        <span>Rs {{remainingAmount | number}}</span>
+      </div>
+      <div class="remainingBudgetWrapper" *ngIf="teamStrength">
+        <label class="control-label">Team Strength: </label>
+        <span> {{teamStrength | number:"1.3"}}</span>
+      </div>
+    </div>
+  </div>
+</div>

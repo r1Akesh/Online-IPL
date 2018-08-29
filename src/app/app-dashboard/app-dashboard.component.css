@@ -1,0 +1,32 @@
+div.mainContainer{
+    max-height: 400px;
+    min-height: 550px;
+    margin-top: 3%;
+}
+.mr5{
+    margin-right: 5%;
+}
+
+.mb5{
+    margin-bottom: 5px;
+}
+
+.mb20{
+    margin-bottom: 20px;
+}
+.vAglignMiddle{
+    vertical-align: middle
+}
+
+.availablePlayersList,.selectedPlayersList{
+    padding-left: 0;
+}
+
+.playerAvtarIcon{
+    font-size: 25px;
+}
+
+li.playerList{
+    cursor: pointer;
+    box-shadow: 0 0 9px 1px #00000026;
+}
